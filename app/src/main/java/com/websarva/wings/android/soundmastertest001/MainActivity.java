@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     int ring_volume     = audioManager.getStreamVolume(AudioManager.STREAM_RING);                  // 着信音量取得
                     int sysmesg_volume  = audioManager.getStreamVolume(AudioManager.STREAM_SYSTEM);                // システムメッセージ音量取得
                     int voice_volume    = audioManager.getStreamVolume(AudioManager.STREAM_VOICE_CALL);            // 通話音量取得
+                    int get_manner_mode = audioManager.getRingerMode();
 
                     TextView TV_alarm_volume    = findViewById(R.id.alarm_volume);
                     TextView TV_music_volume   = findViewById(R.id.music_volume);
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     TextView TV_ring_volume     = findViewById(R.id.ring_volume);
                     TextView TV_sysmesg_volume  = findViewById(R.id.sysmesg_volume);
                     TextView TV_voice_volume    = findViewById(R.id.voice_volume);
+                    TextView TV_manner_mode    = findViewById(R.id.manner_mode);
 
                     TV_alarm_volume.setText(String.valueOf(alarm_volume) + "");
                     TV_music_volume.setText(String.valueOf(music_volume) + "");
@@ -61,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
                     TV_sysmesg_volume.setText(String.valueOf(sysmesg_volume) + "");
                     TV_voice_volume.setText(String.valueOf(voice_volume) + "");
 
+                    // マナーモード判定
+                    if(get_manner_mode == 2){
+                        TV_manner_mode.setText("通常モード");
+                    }else if(get_manner_mode == 1){
+                        TV_manner_mode.setText("マナーモード（バイブ）");
+                    }else{
+                        TV_manner_mode.setText("マナーモード（バイブ無し）");
+                    }
                     break;
 
                 default:
