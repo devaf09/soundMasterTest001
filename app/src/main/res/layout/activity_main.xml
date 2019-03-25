@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="164dp"
+        android:layout_height="21dp"
+        android:text="android 各音量確認"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <Button
+        android:id="@+id/button001"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="376dp"
+        android:layout_marginEnd="8dp"
+        android:text="各音量を取得"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/alarm_volume_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="ダイヤル音量"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+    <TextView
+        android:id="@+id/music_volume_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="ミュージック音量"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_volume_title" />
+
+
+    <TextView
+        android:id="@+id/notice_volume_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="通知音量"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/music_volume_title" />
+
+
+    <TextView
+        android:id="@+id/ring_volume_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="着信音量"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notice_volume_title" />
+
+
+    <TextView
+        android:id="@+id/sysmesg_volume_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="システムメッセージ音量"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ring_volume_title" />
+
+
+    <TextView
+        android:id="@+id/voice_volume_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="通話音量"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sysmesg_volume_title" />
+
+    <TextView
+        android:id="@+id/alarm_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="8dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/alarm_volume_title"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+    <TextView
+        android:id="@+id/music_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/music_volume_title"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_volume" />
+
+
+    <TextView
+        android:id="@+id/notice_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="28dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/notice_volume_title"
+        app:layout_constraintTop_toBottomOf="@+id/music_volume" />
+
+    <TextView
+        android:id="@+id/ring_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="28dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/ring_volume_title"
+        app:layout_constraintTop_toBottomOf="@+id/notice_volume" />
+
+    <TextView
+        android:id="@+id/sysmesg_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/sysmesg_volume_title"
+        app:layout_constraintTop_toBottomOf="@+id/ring_volume" />
+
+    <TextView
+        android:id="@+id/voice_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="28dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/voice_volume_title"
+        app:layout_constraintTop_toBottomOf="@+id/sysmesg_volume" />
+
+</android.support.constraint.ConstraintLayout>
