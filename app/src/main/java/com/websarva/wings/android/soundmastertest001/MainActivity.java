@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,27 +50,46 @@ public class MainActivity extends AppCompatActivity {
                     int get_manner_mode = audioManager.getRingerMode();
 
                     TextView TV_alarm_volume    = findViewById(R.id.alarm_volume);
-                    TextView TV_music_volume   = findViewById(R.id.music_volume);
+                    TextView TV_music_volume    = findViewById(R.id.music_volume);
                     TextView TV_notice_volume   = findViewById(R.id.notice_volume);
                     TextView TV_ring_volume     = findViewById(R.id.ring_volume);
                     TextView TV_sysmesg_volume  = findViewById(R.id.sysmesg_volume);
                     TextView TV_voice_volume    = findViewById(R.id.voice_volume);
-                    TextView TV_manner_mode    = findViewById(R.id.manner_mode);
+                    TextView TV_manner_mode     = findViewById(R.id.manner_mode);
 
-                    TV_alarm_volume.setText(String.valueOf(alarm_volume) + "");
-                    TV_music_volume.setText(String.valueOf(music_volume) + "");
-                    TV_notice_volume.setText(String.valueOf(notice_volume) + "");
-                    TV_ring_volume.setText(String.valueOf(ring_volume) + "");
-                    TV_sysmesg_volume.setText(String.valueOf(sysmesg_volume) + "");
-                    TV_voice_volume.setText(String.valueOf(voice_volume) + "");
+                    // シークバー定義
+                    SeekBar SB_alarm_volume     = findViewById(R.id.seekbar_alarm_volume);
+                    SeekBar SB_music_volume     = findViewById(R.id.seekbar_music_volume);
+                    SeekBar SB_notice_volume    = findViewById(R.id.seekbar_notice_volume);
+                    SeekBar SB_ring_volume      = findViewById(R.id.seekbar_ring_volume);
+                    SeekBar SB_sysmesg_volume   = findViewById(R.id.seekbar_sysmesg_volume);
+                    SeekBar SB_voice_volume     = findViewById(R.id.seekbar_voice_volume);
+
+
+                    TV_alarm_volume.setText(String.valueOf(alarm_volume));
+                    TV_music_volume.setText(String.valueOf(music_volume));
+                    TV_notice_volume.setText(String.valueOf(notice_volume));
+                    TV_ring_volume.setText(String.valueOf(ring_volume));
+                    TV_sysmesg_volume.setText(String.valueOf(sysmesg_volume));
+                    TV_voice_volume.setText(String.valueOf(voice_volume));
+
+                    // シークバーテスト 表示だけ　本来は OnSeekBarChangeListener を使う 最初に音量の最大値を取得するのを忘れないこと　AudioManager.getStreamMaxVolume
+                    SB_alarm_volume.setProgress(alarm_volume);
+                    SB_music_volume.setProgress(alarm_volume);
+                    SB_notice_volume.setProgress(alarm_volume);
+                    SB_ring_volume.setProgress(alarm_volume);
+                    SB_sysmesg_volume.setProgress(alarm_volume);
+                    SB_voice_volume.setProgress(alarm_volume);
 
                     // マナーモード判定
                     if(get_manner_mode == 2){
-                        TV_manner_mode.setText("通常モード");
+                        TV_manner_mode.setText("通常（マナーモードではありません）");
                     }else if(get_manner_mode == 1){
                         TV_manner_mode.setText("マナーモード（バイブ）");
-                    }else{
+                    }else if(get_manner_mode == 0){
                         TV_manner_mode.setText("マナーモード（バイブ無し）");
+                    }else{
+                        TV_manner_mode.setText("マナーモードの状態は不明");
                     }
                     break;
 
