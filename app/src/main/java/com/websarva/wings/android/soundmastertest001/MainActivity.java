@@ -81,15 +81,15 @@ public class MainActivity extends AppCompatActivity {
                     SB_sysmesg_volume.setProgress(alarm_volume);
                     SB_voice_volume.setProgress(alarm_volume);
 
-                    // マナーモード判定
+                    // サイレントモード判定
                     if(get_manner_mode == 2){
-                        TV_manner_mode.setText("通常（マナーモードではありません）");
+                        TV_manner_mode.setText("通常（サイレントモードではありません）");
                     }else if(get_manner_mode == 1){
-                        TV_manner_mode.setText("マナーモード（バイブ）");
+                        TV_manner_mode.setText("サイレントモード（バイブ）");
                     }else if(get_manner_mode == 0){
-                        TV_manner_mode.setText("マナーモード（バイブ無し）");
+                        TV_manner_mode.setText("サイレントモード（バイブ無し）");
                     }else{
-                        TV_manner_mode.setText("マナーモードの状態は不明");
+                        TV_manner_mode.setText("サイレントモードの状態は不明");
                     }
                     break;
 
