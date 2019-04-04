@@ -1,6 +1,7 @@
 package com.websarva.wings.android.soundmastertest001;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 //import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button001 = findViewById(R.id.button001);
+        Button button001 = findViewById(R.id.ToSetingMune);
 
         MainListener mainListener = new MainListener();                                             // リスナ開始
         button001.setOnClickListener(mainListener);                                                 // ボタンをリスナに登録
@@ -38,60 +39,13 @@ public class MainActivity extends AppCompatActivity {
             int objID = view.getId();
 
             switch (objID) {
-                case R.id.button001:
-//                    Toast.makeText(getApplicationContext(), "button", Toast.LENGTH_LONG).show();
-                    AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);             // オーディオマネージャをインスタンス
-                    int alarm_volume    = audioManager.getStreamVolume(AudioManager.STREAM_DTMF);                  // ダイヤル音量取得
-                    int music_volume    = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);                 // 音楽再生音量取得
-                    int notice_volume   = audioManager.getStreamVolume(AudioManager.STREAM_NOTIFICATION);          // 通知音量取得
-                    int ring_volume     = audioManager.getStreamVolume(AudioManager.STREAM_RING);                  // 着信音量取得
-                    int sysmesg_volume  = audioManager.getStreamVolume(AudioManager.STREAM_SYSTEM);                // システムメッセージ音量取得
-                    int voice_volume    = audioManager.getStreamVolume(AudioManager.STREAM_VOICE_CALL);            // 通話音量取得
-                    int get_manner_mode = audioManager.getRingerMode();
+                case R.id.ToSetingMune:
 
-                    TextView TV_alarm_volume    = findViewById(R.id.alarm_volume);
-                    TextView TV_music_volume    = findViewById(R.id.music_volume);
-                    TextView TV_notice_volume   = findViewById(R.id.notice_volume);
-                    TextView TV_ring_volume     = findViewById(R.id.ring_volume);
-                    TextView TV_sysmesg_volume  = findViewById(R.id.sysmesg_volume);
-                    TextView TV_voice_volume    = findViewById(R.id.voice_volume);
-                    TextView TV_manner_mode     = findViewById(R.id.manner_mode);
-
-                    // シークバー定義
-                    SeekBar SB_alarm_volume     = findViewById(R.id.seekbar_alarm_volume);
-                    SeekBar SB_music_volume     = findViewById(R.id.seekbar_music_volume);
-                    SeekBar SB_notice_volume    = findViewById(R.id.seekbar_notice_volume);
-                    SeekBar SB_ring_volume      = findViewById(R.id.seekbar_ring_volume);
-                    SeekBar SB_sysmesg_volume   = findViewById(R.id.seekbar_sysmesg_volume);
-                    SeekBar SB_voice_volume     = findViewById(R.id.seekbar_voice_volume);
-
-
-                    TV_alarm_volume.setText(String.valueOf(alarm_volume));
-                    TV_music_volume.setText(String.valueOf(music_volume));
-                    TV_notice_volume.setText(String.valueOf(notice_volume));
-                    TV_ring_volume.setText(String.valueOf(ring_volume));
-                    TV_sysmesg_volume.setText(String.valueOf(sysmesg_volume));
-                    TV_voice_volume.setText(String.valueOf(voice_volume));
-
-                    // シークバーテスト 表示だけ　本来は OnSeekBarChangeListener を使う 最初に音量の最大値を取得するのを忘れないこと　AudioManager.getStreamMaxVolume
-                    SB_alarm_volume.setProgress(alarm_volume);
-                    SB_music_volume.setProgress(alarm_volume);
-                    SB_notice_volume.setProgress(alarm_volume);
-                    SB_ring_volume.setProgress(alarm_volume);
-                    SB_sysmesg_volume.setProgress(alarm_volume);
-                    SB_voice_volume.setProgress(alarm_volume);
-
-                    // サイレントモード判定
-                    if(get_manner_mode == 2){
-                        TV_manner_mode.setText("通常（サイレントモードではありません）");
-                    }else if(get_manner_mode == 1){
-                        TV_manner_mode.setText("サイレントモード（バイブ）");
-                    }else if(get_manner_mode == 0){
-                        TV_manner_mode.setText("サイレントモード（バイブ無し）");
-                    }else{
-                        TV_manner_mode.setText("サイレントモードの状態は不明");
-                    }
+                    Intent setup01_activityIntent = new Intent(getApplication(), setup01.class);
+                    startActivity(setup01_activityIntent);
+//                    https://akira-watson.com/android/activity-2.html
                     break;
+
 
                 default:
                     String mesg = "認識されないオブジェクトがクリックされました。:" + String.valueOf(objID);
