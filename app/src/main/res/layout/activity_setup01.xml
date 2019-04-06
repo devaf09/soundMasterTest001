@@ -7,17 +7,21 @@
     tools:context=".setup01">
 
 
-
-
-
-
-
+    <TextView
+        android:id="@+id/alarm_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/seekbar_alarm_volume"
+        app:layout_constraintEnd_toEndOf="@+id/seekbar_alarm_volume"
+        app:layout_constraintStart_toStartOf="@+id/seekbar_alarm_volume" />
 
     <TextView
         android:id="@+id/textViewTitle"
-        android:layout_width="164dp"
-        android:layout_height="21dp"
-        android:text="android 音量設定テスト"
+        android:layout_width="248dp"
+        android:layout_height="32dp"
+        android:text="現在の各音量と設定"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -26,27 +30,23 @@
         app:layout_constraintVertical_bias="0.034" />
 
     <Button
-        android:id="@+id/onryousettei"
-        android:layout_width="156dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="380dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/BT_onryousettei"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="現在の設定値で設定"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/BT_returnMain"
+        app:layout_constraintTop_toTopOf="@+id/BT_returnMain" />
 
     <TextView
-        android:id="@+id/alarm_volume_title"
+        android:id="@+id/alarm_dial_volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:text="ダイヤル音量"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/alarm_volume_title" />
 
     <TextView
         android:id="@+id/music_volume_title"
@@ -56,7 +56,7 @@
         android:layout_marginTop="28dp"
         android:text="ミュージック音量"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alarm_volume_title" />
+        app:layout_constraintTop_toBottomOf="@+id/alarm_dial_volume" />
 
 
     <TextView
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
-        android:text="システムメッセージ音量"
+        android:text="システム音量"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ring_volume_title" />
 
@@ -103,132 +103,126 @@
         app:layout_constraintTop_toBottomOf="@+id/sysmesg_volume_title" />
 
     <TextView
-        android:id="@+id/alarm_volume"
+        android:id="@+id/dial_volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="8dp"
         android:text=""
-        app:layout_constraintStart_toEndOf="@+id/alarm_volume_title"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+        app:layout_constraintBottom_toTopOf="@+id/seekbar_dial_volume"
+        app:layout_constraintEnd_toEndOf="@+id/seekbar_dial_volume"
+        app:layout_constraintStart_toStartOf="@+id/seekbar_dial_volume" />
 
     <TextView
         android:id="@+id/music_volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="28dp"
         android:text=""
-        app:layout_constraintStart_toEndOf="@+id/music_volume_title"
-        app:layout_constraintTop_toBottomOf="@+id/alarm_volume" />
+        app:layout_constraintBottom_toTopOf="@+id/seekbar_music_volume"
+        app:layout_constraintEnd_toEndOf="@+id/seekbar_music_volume"
+        app:layout_constraintStart_toStartOf="@+id/seekbar_music_volume" />
 
 
     <TextView
         android:id="@+id/notice_volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="28dp"
         android:text=""
-        app:layout_constraintStart_toEndOf="@+id/notice_volume_title"
-        app:layout_constraintTop_toBottomOf="@+id/music_volume" />
+        app:layout_constraintBottom_toTopOf="@+id/seekbar_notice_volume"
+        app:layout_constraintEnd_toEndOf="@+id/seekbar_notice_volume"
+        app:layout_constraintStart_toStartOf="@+id/seekbar_notice_volume" />
 
     <TextView
         android:id="@+id/ring_volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="28dp"
         android:text=""
-        app:layout_constraintStart_toEndOf="@+id/ring_volume_title"
-        app:layout_constraintTop_toBottomOf="@+id/notice_volume" />
+        app:layout_constraintBottom_toTopOf="@+id/seekbar_ring_volume"
+        app:layout_constraintEnd_toEndOf="@+id/seekbar_ring_volume"
+        app:layout_constraintStart_toStartOf="@+id/seekbar_ring_volume" />
 
     <TextView
         android:id="@+id/sysmesg_volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
         android:text=""
-        app:layout_constraintStart_toEndOf="@+id/sysmesg_volume_title"
-        app:layout_constraintTop_toBottomOf="@+id/ring_volume" />
+        app:layout_constraintBottom_toTopOf="@+id/seekbar_sysmesg_volume"
+        app:layout_constraintEnd_toEndOf="@+id/seekbar_sysmesg_volume"
+        app:layout_constraintStart_toStartOf="@+id/seekbar_sysmesg_volume" />
 
     <TextView
         android:id="@+id/voice_volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="28dp"
         android:text=""
-        app:layout_constraintStart_toEndOf="@+id/voice_volume_title"
-        app:layout_constraintTop_toBottomOf="@+id/sysmesg_volume" />
+        app:layout_constraintBottom_toTopOf="@+id/seekbar_voice_volume"
+        app:layout_constraintEnd_toEndOf="@+id/seekbar_voice_volume"
+        app:layout_constraintStart_toStartOf="@+id/seekbar_voice_volume" />
 
     <TextView
         android:id="@+id/manner_mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:text="マナーモードの判定"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/voice_volume_title" />
 
     <SeekBar
-        android:id="@+id/seekbar_alarm_volume"
-        android:layout_width="120dp"
+        android:id="@+id/seekbar_dial_volume"
+        android:layout_width="200dp"
         android:layout_height="17dp"
         android:layout_marginEnd="16dp"
-        android:max="20"
+        android:max="100"
         android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/alarm_volume_title" />
+        app:layout_constraintTop_toTopOf="@+id/alarm_dial_volume" />
 
     <SeekBar
         android:id="@+id/seekbar_music_volume"
-        android:layout_width="120dp"
+        android:layout_width="200dp"
         android:layout_height="17dp"
         android:layout_marginEnd="16dp"
-        android:max="20"
+        android:max="100"
         android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/music_volume_title" />
 
     <SeekBar
         android:id="@+id/seekbar_notice_volume"
-        android:layout_width="120dp"
+        android:layout_width="200dp"
         android:layout_height="17dp"
         android:layout_marginEnd="16dp"
-        android:max="20"
+        android:max="100"
         android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/notice_volume_title" />
 
     <SeekBar
         android:id="@+id/seekbar_ring_volume"
-        android:layout_width="120dp"
+        android:layout_width="200dp"
         android:layout_height="17dp"
         android:layout_marginEnd="16dp"
-        android:max="20"
+        android:max="100"
         android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ring_volume_title" />
 
     <SeekBar
         android:id="@+id/seekbar_sysmesg_volume"
-        android:layout_width="120dp"
+        android:layout_width="200dp"
         android:layout_height="17dp"
         android:layout_marginEnd="16dp"
-        android:max="20"
+        android:max="100"
         android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sysmesg_volume_title" />
 
     <SeekBar
         android:id="@+id/seekbar_voice_volume"
-        android:layout_width="120dp"
+        android:layout_width="200dp"
         android:layout_height="17dp"
         android:layout_marginEnd="16dp"
-        android:max="20"
+        android:max="100"
         android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/voice_volume_title" />
@@ -237,11 +231,29 @@
         android:id="@+id/BT_returnMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
         android:text="戻る"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/manner_mode" />
+
+    <TextView
+        android:id="@+id/alarm_volume_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:text="アラーム音量"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+    <SeekBar
+        android:id="@+id/seekbar_alarm_volume"
+        android:layout_width="200dp"
+        android:layout_height="17dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/alarm_volume_title" />
 
 
 </android.support.constraint.ConstraintLayout>
